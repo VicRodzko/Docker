@@ -84,7 +84,7 @@ app.post('/get-employees', (req, res) => {
 });
 
 // Delete employee
-app.get('/employees/:id', function(req, res) {
+app.delete('/employees/:id', function(req, res) {
   const id= req.params.id;
   const sql = 'DELETE FROM users WHERE id = ?';
   connection.query(sql, [id], function (err, results) {
