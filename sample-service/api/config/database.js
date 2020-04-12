@@ -11,12 +11,12 @@ const db = mysql.createConnection({
 db.connect((err) => {
   if (err) throw err;
 
-  console.log('Mysql: Connected');
+  console.log('Mysql: Connected!!!');
 });
 
-db.promise = (sql) =>
+db.promise = (sql, args) =>
   new Promise((resolve, reject) => {
-    db.query(sql, (err, result) => {
+    db.query(sql, args, (err, result) => {
       if (err) {
         reject(new Error());
       } else {

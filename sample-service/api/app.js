@@ -6,7 +6,6 @@ const employees = require('./routes/employees');
 const app = express();
 
 app.set('view engine', 'jade');
-
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));
