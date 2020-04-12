@@ -1,9 +1,10 @@
 const express = require('express');
+
 const router = express.Router();
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-    res.render('index.jade', { title: 'Hello world!' });
+router.get('/', (req, res) => {
+  res.render('index.jade', { title: 'Hello world!' });
 });
 
 module.exports = router;

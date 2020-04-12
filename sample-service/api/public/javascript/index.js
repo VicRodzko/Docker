@@ -1,5 +1,5 @@
-$(document).ready(function(){
-    $('#react').click(function(){
-        $(this).append('<p> Dont Touch Me</p>');
-    });
+$(document).ready(() => {
+  $('#react').click(() => {
+    $(this).append('<p> Dont Touch Me</p>');
+  });
 });
