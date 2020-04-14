@@ -1,5 +1,5 @@
-import EmployeesService from '../service/Employees';
-import express from 'express';
+const express = require('express');
+const EmployeesService = require('../service/Employees');
 
 const router = express.Router();
 const employeesService = new EmployeesService();
@@ -43,4 +43,4 @@ router.delete('/:id', (req, res) => {
     );
 });
 
-export default router;
+module.exports = router;

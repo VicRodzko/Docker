@@ -1,7 +1,7 @@
-import express from 'express';
-import bodyParser from 'body-parser';
-import index from './routes/index';
-import employees from './routes/employees';
+const express = require('express');
+const bodyParser = require('body-parser');
+const index = require('./routes/index');
+const employees = require('./routes/employees');
 
 const app = express();
 
@@ -13,3 +13,5 @@ app.use('/', index);
 app.use('/employees', employees);
 
 app.listen(8080);
+
+module.exports = app;

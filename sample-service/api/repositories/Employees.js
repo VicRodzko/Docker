@@ -1,5 +1,5 @@
-import db from '../config/database';
-import errorHandler from '../handlers/errorHandler';
+const db = require('../config/database');
+const errorHandler = require('../handlers/errorHandler');
 
 class EmployeesRepository {
   /**
@@ -42,4 +42,4 @@ class EmployeesRepository {
   }
 }
 
-export default EmployeesRepository;
+module.exports = EmployeesRepository;

@@ -1,4 +1,4 @@
-import mysql from 'mysql';
+const mysql = require('mysql');
 
 const db = mysql.createConnection({
   host: 'localhost',
@@ -25,4 +25,4 @@ db.promise = (sql, args) =>
     });
   });
 
-export default db;
+module.exports = db;

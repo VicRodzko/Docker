@@ -8,4 +8,4 @@ const errorHandler = (err) => {
   }
 };
 
-export default errorHandler;
+module.exports = errorHandler;

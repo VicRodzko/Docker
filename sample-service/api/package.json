@@ -4,8 +4,8 @@
   "description": "System ERP",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon --exec babel-node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon app.js",
+    "test": "jest"
   },
   "keywords": [
     "erp",
@@ -34,11 +34,10 @@
     "eslint": "^6.8.0",
     "eslint-config-airbnb-base": "^14.1.0",
     "eslint-plugin-import": "^2.20.2",
+    "jest": "^25.3.0",
     "nodemon": "^2.0.3"
   },
-  "babel": {
-    "presets": [
-      "@babel/preset-env"
-    ]
+  "jest": {
+    "testEnvironment": "node"
   }
 }

@@ -1,4 +1,4 @@
-import EmployeesRepository from '../repositories/Employees';
+const EmployeesRepository = require('../repositories/Employees');
 
 const employeesRepository = new EmployeesRepository();
 
@@ -22,4 +22,4 @@ class EmployeesService {
   }
 }
 
-export default EmployeesService;
+module.exports = EmployeesService;
