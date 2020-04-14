@@ -1,7 +1,7 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const index = require('./routes/index');
-const employees = require('./routes/employees');
+import express from 'express';
+import bodyParser from 'body-parser';
+import index from './routes/index';
+import employees from './routes/employees';
 
 const app = express();
 
@@ -12,4 +12,4 @@ app.use(express.static('public'));
 app.use('/', index);
 app.use('/employees', employees);
 
-app.listen(8123);
+app.listen(8080);

@@ -7,4 +7,4 @@ router.get('/', (req, res) => {
   res.render('index.jade', { title: 'Hello world!' });
 });
 
-module.exports = router;
+export default router;

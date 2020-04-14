@@ -1,10 +1,11 @@
-const express = require('express');
-const serviceEmployees = require('../service/employees');
+import EmployeesService from '../service/Employees';
+import express from 'express';
 
 const router = express.Router();
+const employeesService = new EmployeesService();
 
 router.get('/', (req, res) =>
-  serviceEmployees
+  employeesService
     .findAll()
     .then((employees) => res.status(200).send(employees))
     .catch((err) =>
@@ -17,12 +18,7 @@ router.get('/', (req, res) =>
 router.post('/', (req, res) => {
   const { name, positions, phone, location, email } = req.body;
 
-  if (!name || !positions || !phone || !location || !email)
-    return res
-      .status(404)
-      .send({ message: 'Employee not created without right data' });
-
-  serviceEmployees
+  employeesService
     .addEmployeeById(name, positions, phone, location, email)
     .then((result) => res.status(201).send(result))
     .catch((err) =>
@@ -35,26 +31,16 @@ router.post('/', (req, res) => {
 router.delete('/:id', (req, res) => {
   const { id } = req.params;
 
-  if (!id)
-    return res
-      .status(404)
-      .send({ message: `Employee not found with id = ${id}` });
-
-  serviceEmployees
+  employeesService
     .deleteEmployeeById(id)
     .then((result) =>
       res.status(200).send({ message: 'Employee deleted successfully!' }),
     )
-    .catch((err) => {
-      if (err.kind === 'ObjectId' || err.name === 'NotFound')
-        return res
-          .status(404)
-          .send({ message: `Employee not found with id ${id}` });
-
-      return res
+    .catch((err) =>
+      res
         .status(500)
-        .send({ message: `Could not delete employee with id ${id}` });
-    });
+        .send({ message: `Could not delete employee with id ${id}` }),
+    );
 });
 
-module.exports = router;
+export default router;
