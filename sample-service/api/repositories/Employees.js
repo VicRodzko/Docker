@@ -1,4 +1,4 @@
-const db = require('../config/database');
+const db = require('../settings/database');
 const errorHandler = require('../handlers/errorHandler');
 
 class EmployeesRepository {
